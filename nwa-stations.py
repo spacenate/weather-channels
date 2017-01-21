@@ -26,14 +26,13 @@ class locationTableViewDelegate (object):
     def tableview_did_select(self, tableview, section, row):
         # Called when a row was selected.
         state = tableview.data_source.items[row]
-        dataSource = stationTableViewDataSource(state)
 
         table = ui.TableView()
         table.name = '%s Stations' % state
         table.width = tableview.superview.width
         table.height = tableview.superview.height
         table.flex = 'WH'
-        table.data_source = dataSource
+        table.data_source = stationTableViewDataSource(table, state)
 
         tableview.navigation_view.push_view(table)
 

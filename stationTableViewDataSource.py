@@ -2,11 +2,13 @@ import requests
 import json
 from urllib import urlencode
 from bs4 import BeautifulSoup
+import ui
 
 class stationTableViewDataSource (object):
-    def __init__(self, state):
+    def __init__(self, tableview, state):
         stationData = self.getStationsCached(state)
         self.stationData = self.addChannelInfo(stationData, 'BC Link')
+        tableview.reload_data()
 
     def addChannelInfo(self, stations, device):
         device     = device.upper()
