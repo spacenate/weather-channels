@@ -1,9 +1,8 @@
 # coding: utf-8
+import ui
 import requests
 import json
-from urllib import urlencode
 from bs4 import BeautifulSoup
-import ui
 from console import quicklook
 
 class stationTableView (ui.View):

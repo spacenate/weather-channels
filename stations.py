@@ -2,11 +2,6 @@
 from stationTableView import stationTableView
 import ui
 
-# todo
-# - show indication of which states have been downloaded
-# - show 'downloading' animation/screen while downloading new state
-# - allow managing downloaded states (delete, update)
-
 STATES = {
     'Alabama': 'AL',
     'Montana': 'MT',
