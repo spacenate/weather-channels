@@ -3,13 +3,19 @@ import json
 from urllib import urlencode
 from bs4 import BeautifulSoup
 
+#http://omz-software.com/pythonista/docs/ios/index.html
 
 def main():
     stations = getStationsCached('CO')
     stations = addChannelInfo(stations, 'BC Link')
 
-    # todo - display table of stations and channels
+    print('%s%s%s' % ('Sign'.ljust(8), 'Station'.ljust(18), 'Channel'))
+    print('%s%s%s' % ('----'.ljust(8), '-------'.ljust(18), '-------'))
+    for station in stations:
+        print('%s%s%s' % (station['call-sign'].ljust(8), station['site'].ljust(18), station['channel']))
+
     # todo - prompt user for state
+    # todo - GUI
     # todo - download image of state from e.g. http://www.nws.noaa.gov/nwr/Maps/PHP/CO.php
 
 def addChannelInfo(stations, device):
